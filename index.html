@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BasketBall Scorecard</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="scoreboard">
+      <!-- HOME -->
+      <div class="team">
+        <div class="team-name team-home">HOME</div>
+        <div class="score-box score-home">
+          <span id="home-score" class="score-value">0</span>
+        </div>
+        <div class="buttons-group">
+          <div class="button-box btn-home btn-home-1">
+            <button onclick="addScore('home', 1)">+1</button>
+          </div>
+          <div class="button-box btn-home btn-home-2">
+            <button onclick="addScore('home', 2)">+2</button>
+          </div>
+          <div class="button-box btn-home btn-home-3">
+            <button onclick="addScore('home', 3)">+3</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUEST -->
+      <div class="team">
+        <div class="team-name team-guest">GUEST</div>
+        <div class="score-box score-guest">
+          <span id="guest-score" class="score-value">0</span>
+        </div>
+        <div class="buttons-group">
+          <div class="button-box btn-guest btn-guest-1">
+            <button onclick="addScore('guest', 1)">+1</button>
+          </div>
+          <div class="button-box btn-guest btn-guest-2">
+            <button onclick="addScore('guest', 2)">+2</button>
+          </div>
+          <div class="button-box btn-guest btn-guest-3">
+            <button onclick="addScore('guest', 3)">+3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const scores = { home: 0, guest: 0 };
+      function addScore(team, points) {
+        scores[team] += points;
+        document.getElementById(`${team}-score`).textContent = scores[team];
+      }
+    </script>
+  </body>
+</html>
